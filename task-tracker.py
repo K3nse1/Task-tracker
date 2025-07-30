@@ -6,18 +6,24 @@ import datetime
 class TaskTracker:
     
     def __init__(self):
-        pass
-    
-    def create_arguments(self):
-        sys.argv += ['add', 'edit', 'delete']
-    
-    def add_command(self, command:str):
-        return sys.argv.append(command)
-    
-    def run_cli(self):
-        self.create_arguments()
-        return sys.argv
+        self.filename = 'tasks.json'
+        self.valid_commands = ['add', 'update', 'delete', 'mark-in-progress', 'mark-done', 'list']
 
-app = TaskTracker()
+    def get_help(self):
+            print("TODO: Here we'll provide help with commands")
 
-print(app.run_cli())
+    def main(self):
+        if len(sys.argv) == 1:
+             self.get_help()
+             return
+
+        if (len(sys.argv) == 2) and (sys.argv[1] in self.valid_commands):
+            print(f"TODO: Here we'll specify the arguments that the user must provide with that command")
+            return
+        
+
+
+
+if __name__ == '__main__':
+    app = TaskTracker()
+    app.main()
