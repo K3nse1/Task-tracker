@@ -40,9 +40,15 @@ class TaskTracker:
 
     def update_task_numbers(self):
         self.open_file('r+')
-        for idx, key in enumerate(self.file.keys()):
-            self.file[f"task{idx}"] = self.file[key]
+        for idx, key in enumerate(list(self.file.keys())):
+            self.file[f"task{idx + 1}"] = self.file[key]
             del self.file[key]
+        # idx = 0
+        # keys_list = list(self.file.keys())
+        # while idx < len(keys_list):
+        #     self.file[f"task{idx + 1}"] = self.file[keys_list[idx]]
+        #     del self.file[keys_list[idx]]
+        #     idx += 1
         return self.file
 
     def delete(self, id:int):
@@ -98,5 +104,8 @@ class TaskTracker:
 
 if __name__ == '__main__':
     app = TaskTracker()
-    app.main()
+    # app.main()
+    app.add('Hola')
+    app.add('Hola')
+    app.delete(2)
     # app.add('Complete the add method')

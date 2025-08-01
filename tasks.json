@@ -1,18 +1,1 @@
-{
-    "task1": {
-        "title": "1",
-        "status": "To do"
-    },
-    "task2": {
-        "title": "Hola",
-        "status": "To do"
-    },
-    "task3": {
-        "title": "Hola",
-        "status": "To do"
-    },
-    "task4": {
-        "title": "1",
-        "status": "To do"
-    }
-}
+{}
